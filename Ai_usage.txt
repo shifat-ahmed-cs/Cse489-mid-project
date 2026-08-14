@@ -1,0 +1,19 @@
+========================================================================
+CSE 489: Mobile Application Development - Mid Project
+AI Usage Justification & Specification Document
+Student Key: 22301582
+========================================================================
+
+AI ASSISTANCE OVERVIEW:
+-----------------------
+AI assistance (via Antigravity AI Coding Assistant) was utilized during the development of this project for:
+1. Architecture Planning & Design: Formulating an MVVM architecture with Room as the Single Source of Truth to fulfill offline caching and WorkManager requirements cleanly.
+2. Code Generation & Boilerplate Setup: Generating Android Kotlin data classes, Room DAO queries, Retrofit interface definitions, and XML layout structures.
+3. API Verification & Testing: Testing API endpoints with curl/HTTP requests using student key "22301582".
+4. Background Worker Design: Writing the `VisitSyncWorker` logic to handle offline queue draining and background polling of `get_job_status`.
+5. Map Marker Customization: Implementing dynamic color gradient calculations for OpenStreetMap markers based on landmark score bounds.
+
+JUSTIFICATION OF AI USAGE:
+--------------------------
+All generated code was thoroughly reviewed, verified against the project specification PDF (`CSE_489_Lab_Exam_v5.pdf`) and API reference (`API_Reference.html`), and tested against the live backend server.
+The AI assisted in enforcing best architectural practices, preventing common traps (e.g. ensuring multipart form-data for file uploads, preventing UI thread blocking during async visit polling), and accelerating UI layout composition.

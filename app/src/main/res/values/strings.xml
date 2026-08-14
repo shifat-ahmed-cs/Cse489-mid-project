@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Landmarks</string>
+    <string name="title_map">Map</string>
+    <string name="title_landmarks">Landmarks</string>
+    <string name="title_activity">Activity</string>
+    <string name="title_add_view">Add/View</string>
+
+    <string name="action_visit">Visit</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_restore">Restore</string>
+    <string name="action_add">Create Landmark</string>
+    <string name="action_get_location">Get GPS Location</string>
+</resources>
