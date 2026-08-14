@@ -61,28 +61,28 @@ FEATURES IMPLEMENTED:
 API USAGE:
 ----------
 Base URL: https://labs.anontech.info/cse489/exm3/api.php
-Authentication: `key=23101088` on every request.
+Authentication: `key=22301582` on every request.
 
 1. Get Landmarks:
-   GET api.php?action=get_landmarks&key=23101088
+   GET api.php?action=get_landmarks&key=22301582
 
 2. Visit Landmark:
-   POST api.php?action=visit_landmark&key=23101088
+   POST api.php?action=visit_landmark&key=22301582
    Body (JSON): { "landmark_id": Int, "user_lat": Double, "user_lon": Double }
 
 3. Get Job Status:
-   GET api.php?action=get_job_status&key=23101088&job_id=INT
+   GET api.php?action=get_job_status&key=22301582&job_id=INT
 
 4. Create Landmark:
-   POST api.php?action=create_landmark&key=23101088
+   POST api.php?action=create_landmark&key=22301582
    Body (multipart/form-data): title, lat, lon, image (file)
 
 5. Soft Delete Landmark:
-   POST api.php?action=delete_landmark&key=23101088
+   POST api.php?action=delete_landmark&key=22301582
    Body (form-urlencoded): id=INT
 
 6. Restore Landmark:
-   POST api.php?action=restore_landmark&key=23101088
+   POST api.php?action=restore_landmark&key=22301582
    Body (form-urlencoded): id=INT
 
 
