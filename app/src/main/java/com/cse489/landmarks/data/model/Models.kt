@@ -4,9 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class Landmark(
     val id: Int,
-    val title: String,
-    val lat: Double,
-    val lon: Double,
+    val title: String? = null,
+    val lat: Double? = null,
+    val lon: Double? = null,
     val image: String?,
     @SerializedName("is_active") val isActive: Int = 1,
     @SerializedName("visit_count") val visitCount: Int = 0,

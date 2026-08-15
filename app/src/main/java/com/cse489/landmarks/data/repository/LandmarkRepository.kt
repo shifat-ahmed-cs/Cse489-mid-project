@@ -28,12 +28,14 @@ class LandmarkRepository(
         return try {
             val response = apiService.getLandmarks()
             if (response.isSuccessful && response.body() != null) {
-                val entities = response.body()!!.map { landmark ->
+                val entities = response.body()!!
+                    .filter { it.title != null && it.lat != null && it.lon != null }
+                    .map { landmark ->
                     LandmarkEntity(
                         id = landmark.id,
-                        title = landmark.title,
-                        lat = landmark.lat,
-                        lon = landmark.lon,
+                        title = landmark.title ?: "",
+                        lat = landmark.lat ?: 0.0,
+                        lon = landmark.lon ?: 0.0,
                         image = landmark.image,
                         isActive = landmark.isActive,
                         visitCount = landmark.visitCount,

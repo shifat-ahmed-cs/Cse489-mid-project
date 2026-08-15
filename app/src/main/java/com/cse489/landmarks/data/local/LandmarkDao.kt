@@ -50,4 +50,7 @@ interface LandmarkDao {
 
     @Query("DELETE FROM pending_visits WHERE id = :id")
     suspend fun deletePendingVisit(id: Long)
+
+    @Query("SELECT * FROM visit_history WHERE status = 'pending' AND jobId IS NOT NULL")
+    suspend fun getPendingJobVisits(): List<VisitHistoryEntity>
 }

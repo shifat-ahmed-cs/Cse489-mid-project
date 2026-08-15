@@ -70,7 +70,7 @@
             android:valueFrom="-1000000"
             android:valueTo="1000"
             android:stepSize="100"
-            android:value="0" />
+            android:value="-1000000" />
 
         <Button
             android:id="@+id/btnResetFilter"

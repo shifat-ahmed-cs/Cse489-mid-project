@@ -55,8 +55,7 @@ class VisitSyncWorker(
             val maxAttempts = 5
 
             while (pollAttempts < maxAttempts) {
-                val activeVisits = dao.getVisitHistory().value ?: emptyList()
-                val pendingJobs = activeVisits.filter { it.status == "pending" && it.jobId != null }
+                val pendingJobs = dao.getPendingJobVisits()
 
                 if (pendingJobs.isEmpty()) {
                     break
@@ -91,12 +90,14 @@ class VisitSyncWorker(
             try {
                 val landmarksResponse = apiService.getLandmarks()
                 if (landmarksResponse.isSuccessful && landmarksResponse.body() != null) {
-                    val entities = landmarksResponse.body()!!.map { landmark ->
+                    val entities = landmarksResponse.body()!!
+                        .filter { it.title != null && it.lat != null && it.lon != null }
+                        .map { landmark ->
                         com.cse489.landmarks.data.local.LandmarkEntity(
                             id = landmark.id,
-                            title = landmark.title,
-                            lat = landmark.lat,
-                            lon = landmark.lon,
+                            title = landmark.title ?: "",
+                            lat = landmark.lat ?: 0.0,
+                            lon = landmark.lon ?: 0.0,
                             image = landmark.image,
                             isActive = landmark.isActive,
                             visitCount = landmark.visitCount,
